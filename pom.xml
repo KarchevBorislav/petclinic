@@ -11,7 +11,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>17</java.version>
+        <java.version>11</java.version>
         <jaxb.version>2.3.0</jaxb.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
@@ -19,7 +19,7 @@
 
     <groupId>spring.framework</groupId>
     <artifactId>pet-clinic</artifactId>
-    <version>0.0.5</version>
+    <version>0.0.5-SNAPSHOT</version>
 
     <packaging>pom</packaging>
     <name>pet clinic</name>
