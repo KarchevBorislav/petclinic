@@ -6,12 +6,6 @@ import spring.framework.petclinic.model.Owner;
 import java.util.Optional;
 import java.util.Set;
 
-public interface OwnerService extends CrudRepository<Owner, Long> {
+public interface OwnerService extends CrudService<Owner, Long> {
     Owner findByLastName(String lastName);
-
-    Optional<Owner> findById(Long id);
-
-    Owner save(Owner owner);
-
-    Set<Owner> findAll();
-}
+    }

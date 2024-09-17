@@ -6,12 +6,6 @@ import spring.framework.petclinic.model.Vet;
 import java.util.Optional;
 import java.util.Set;
 
-public interface VerService extends CrudRepository<Vet, Long> {
-
-    Optional<Vet> findById(Long id);
-
-    Vet save(Vet vet);
-
-    Set<Vet> findAll();
+public interface VerService extends CrudService<Vet, Long> {
 
 }
