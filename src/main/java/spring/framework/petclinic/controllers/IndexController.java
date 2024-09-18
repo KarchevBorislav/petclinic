@@ -1,4 +1,4 @@
-package spring.framework.test.controllers;
+package spring.framework.petclinic.controllers;
 
 
 import org.springframework.stereotype.Controller;
