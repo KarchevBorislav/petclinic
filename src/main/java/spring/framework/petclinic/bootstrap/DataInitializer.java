@@ -1,5 +1,6 @@
 package spring.framework.petclinic.bootstrap;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import spring.framework.petclinic.model.Owner;
@@ -11,14 +12,17 @@ import spring.framework.petclinic.services.map.VetMapService;
 
 
 @Component
-public class DataInitializer  implements CommandLineRunner {
+public class DataInitializer implements CommandLineRunner {
 
-  private   final  OwnerService ownerService;
-  private final VetService vetService;
+    private final OwnerService ownerService;
+    private final VetService vetService;
 
-    public DataInitializer() {
-        this.ownerService = new OwnerMapService();
-        this.vetService = new VetMapService();
+  
+    @Autowired
+    public DataInitializer(OwnerService ownerService, VetService vetService) {
+
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
 
     @Override
