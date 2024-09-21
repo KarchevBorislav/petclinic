@@ -27,14 +27,14 @@ public class DataInitializer implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         Owner ownerOne = new Owner();
-        ownerOne.setId(1L);
+
         ownerOne.setFirstName("John");
         ownerOne.setLastName("Snow");
 
         ownerService.save(ownerOne);
 
         Owner ownerTwo = new Owner();
-        ownerTwo.setId(2L);
+
         ownerTwo.setFirstName("Sansa");
         ownerTwo.setLastName("Stark");
 
@@ -44,14 +44,14 @@ public class DataInitializer implements CommandLineRunner {
         System.out.println("Loaded Owners...");
 
         Vet vetOne = new Vet();
-        vetOne.setId(1L);
+
         vetOne.setFirstName("John");
         vetOne.setLastName("Doe");
 
         vetService.save(vetOne);
 
         Vet vetTwo = new Vet();
-        vetTwo.setId(2L);
+
         vetTwo.setFirstName("Eugen");
         vetTwo.setLastName("Brown");
         vetService.save(vetTwo);
