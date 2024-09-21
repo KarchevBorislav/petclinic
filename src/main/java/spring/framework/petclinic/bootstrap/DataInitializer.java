@@ -7,8 +7,6 @@ import spring.framework.petclinic.model.Owner;
 import spring.framework.petclinic.model.Vet;
 import spring.framework.petclinic.services.OwnerService;
 import spring.framework.petclinic.services.VetService;
-import spring.framework.petclinic.services.map.OwnerMapService;
-import spring.framework.petclinic.services.map.VetMapService;
 
 
 @Component
@@ -17,7 +15,7 @@ public class DataInitializer implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
 
-  
+
     @Autowired
     public DataInitializer(OwnerService ownerService, VetService vetService) {
 
