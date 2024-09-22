@@ -9,6 +9,6 @@ import java.io.Serializable;
 @Getter
 public class BaseEntity implements Serializable {
 
-    private Long id;
+    private Integer id;
 
 }

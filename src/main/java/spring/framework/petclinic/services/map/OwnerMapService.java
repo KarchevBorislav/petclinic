@@ -8,7 +8,7 @@ import spring.framework.petclinic.services.OwnerService;
 import java.util.Set;
 
 @Service
-public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerService{
+public class OwnerMapService extends AbstractMapService<Owner, Integer> implements OwnerService{
 
     @Override
     public Set<Owner> findAll() {
@@ -16,7 +16,7 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
     }
 
     @Override
-    public Owner findById(Long id) {
+    public Owner findById(Integer id) {
         return super.findById(id);
     }
 
@@ -32,7 +32,7 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
     }
 
     @Override
-    public void deleteById(Long id) {
+    public void deleteById(Integer id) {
         super.deleteById(id);
 
     }

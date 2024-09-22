@@ -7,7 +7,7 @@ import spring.framework.petclinic.services.VetService;
 import java.util.Set;
 
 @Service
-public class VetMapService extends AbstractMapService<Vet, Long> implements VetService {
+public class VetMapService extends AbstractMapService<Vet, Integer> implements VetService {
     @Override
     public Set<Vet> findAll() {
         return super.findAll();
@@ -20,13 +20,13 @@ public class VetMapService extends AbstractMapService<Vet, Long> implements VetS
     }
 
     @Override
-    public void deleteById(Long id) {
+    public void deleteById(Integer id) {
         super.deleteById(id);
 
     }
 
     @Override
-    public Vet findById(Long id) {
+    public Vet findById(Integer id) {
         return super.findById(id);
     }
 

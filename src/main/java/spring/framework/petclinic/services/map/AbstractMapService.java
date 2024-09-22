@@ -4,9 +4,9 @@ import spring.framework.petclinic.model.BaseEntity;
 
 import java.util.*;
 
-public abstract class AbstractMapService<T extends BaseEntity, ID extends  Long> {
+public abstract class AbstractMapService<T extends BaseEntity, ID extends  Integer> {
 
-    protected Map<Long, T> map = new HashMap<>();
+    protected Map<Integer, T> map = new HashMap<>();
 
     Set<T> findAll() {
         return new HashSet<>(map.values());
@@ -42,14 +42,14 @@ public abstract class AbstractMapService<T extends BaseEntity, ID extends  Long>
 
     }
 
-    private Long getNextId(){
+    private Integer getNextId(){
 
-        Long nextId = null;
+        Integer nextId = null;
 
 try {
     nextId =  Collections.max(map.keySet()) +1;
 }catch (NoSuchElementException e){
-    nextId = 1L;
+    nextId = 1;
 }
 
 
