@@ -13,5 +13,5 @@ public class Visit extends BaseEntity {
     private  String description;
     private Pet pet;
 
-         
+
 }

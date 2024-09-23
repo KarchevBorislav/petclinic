@@ -3,14 +3,9 @@ package spring.framework.petclinic.model;
 import lombok.Getter;
 import lombok.Setter;
 
-
-import java.util.Set;
-
-
 @Setter
 @Getter
-public class Vet extends Person {
-
-    private Set<Speciality> specialties;
+public class Speciality extends BaseEntity{
+    private String description;
 
 }
