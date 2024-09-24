@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import spring.framework.petclinic.services.OwnerService;
-
+@RequestMapping("/owners")
 @Controller
 public class OwnerController {
 
@@ -17,12 +17,20 @@ public class OwnerController {
     }
 
 
-    @RequestMapping({"/owners","/owners/index","/owners/index.html"})
+    @RequestMapping({"/index","/index.html"})
 public String showOwnersList(Model model){
         model.addAttribute("owners",ownerService.findAll());
 
 
     return "owners/index";
 }
+
+
+
+    @RequestMapping("/find")
+    public String findOwners(){
+
+       return "notimplemented";
+ }
 
 }
