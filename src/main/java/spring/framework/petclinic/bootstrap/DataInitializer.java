@@ -16,14 +16,16 @@ public class DataInitializer implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialtyService specialtyService;
+    private final VisitService visitService;
 
 
-    public DataInitializer(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService) {
+    public DataInitializer(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService, VisitService visitService) {
 
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialtyService = specialtyService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -32,7 +34,7 @@ public class DataInitializer implements CommandLineRunner {
         int count = petTypeService.findAll().size();
 
 
-        if (count == 0){
+        if (count == 0) {
             loadData();
         }
 
@@ -88,8 +90,6 @@ public class DataInitializer implements CommandLineRunner {
         ownerTwo.setCity("Some other City");
         ownerTwo.setTelephoneNumber("+112  123 456-789");
 
-        ownerService.save(ownerTwo);
-
 
         Pet sansasPet = new Pet();
         sansasPet.setPetType(saveCat);
@@ -97,6 +97,15 @@ public class DataInitializer implements CommandLineRunner {
         sansasPet.setBirthDate(LocalDate.now());
         sansasPet.setName("Cat");
         ownerTwo.getPets().add(sansasPet);
+
+        ownerService.save(ownerTwo);
+
+        Visit catVisit = new Visit();
+        catVisit.setPet(sansasPet);
+        catVisit.setDate(LocalDate.now());
+        catVisit.setDescription("Just a cat");
+        visitService.save(catVisit);
+
 
 
         System.out.println("Loaded Owners...");
@@ -115,5 +124,7 @@ public class DataInitializer implements CommandLineRunner {
         vetService.save(vetTwo);
         vetTwo.getSpecialties().add(savedSurgery);
         System.out.println("Loaded Vets...");
+
+
     }
 }
