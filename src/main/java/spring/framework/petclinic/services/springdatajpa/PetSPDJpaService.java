@@ -1,5 +1,6 @@
 package spring.framework.petclinic.services.springdatajpa;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import spring.framework.petclinic.model.Pet;
 import spring.framework.petclinic.repositories.PetRepository;
@@ -10,6 +11,7 @@ import java.util.Optional;
 import java.util.Set;
 
 @Service
+@Profile("springdatajpa")
 public class PetSPDJpaService implements PetService {
 
     private final PetRepository petRepository;

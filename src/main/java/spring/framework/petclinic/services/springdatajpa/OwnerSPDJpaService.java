@@ -1,15 +1,18 @@
 package spring.framework.petclinic.services.springdatajpa;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import spring.framework.petclinic.model.Owner;
 import spring.framework.petclinic.repositories.OwnerRepository;
 import spring.framework.petclinic.services.OwnerService;
 
 import java.util.HashSet;
-import java.util.Optional;
 import java.util.Set;
 
+
+
 @Service
+@Profile("springdatajpa")
 public class OwnerSPDJpaService implements OwnerService {
 
     private final OwnerRepository ownerRepository;
