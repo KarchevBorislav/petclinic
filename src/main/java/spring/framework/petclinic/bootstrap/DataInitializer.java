@@ -2,7 +2,6 @@ package spring.framework.petclinic.bootstrap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 import spring.framework.petclinic.model.*;
@@ -75,7 +74,12 @@ public class DataInitializer implements CommandLineRunner {
         ownerOne.setAddress("Some Address 1");
         ownerOne.setCity("Some City");
         ownerOne.setTelephoneNumber("+91 123-456-789");
-        ownerService.save(ownerOne);
+
+
+
+
+
+
 
         Pet johnsPet = new Pet();
         johnsPet.setPetType(saveDod);
@@ -84,6 +88,8 @@ public class DataInitializer implements CommandLineRunner {
         johnsPet.setName("Pirin");
         ownerOne.getPets().add(johnsPet);
 
+
+        ownerService.save(ownerOne);
         Owner ownerTwo = new Owner();
 
         ownerTwo.setFirstName("Sansa");

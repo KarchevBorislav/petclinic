@@ -1,8 +1,7 @@
 package spring.framework.petclinic.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.Cascade;
 
 import java.time.LocalDate;
@@ -14,6 +13,10 @@ import java.util.Set;
 @Setter
 @Getter
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+
 @Table(name = "pets")
 public class Pet extends BaseEntity {
 
@@ -32,7 +35,6 @@ public class Pet extends BaseEntity {
     private LocalDate birthDate;
 
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "pet")
-
     private Set<Visit> visits = new HashSet<>();
 
 }
