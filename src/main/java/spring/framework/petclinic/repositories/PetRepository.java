@@ -4,6 +4,5 @@ import org.springframework.data.repository.CrudRepository;
 import spring.framework.petclinic.model.Pet;
 
 public interface PetRepository extends CrudRepository<Pet, Integer> {
-    Pet findByLastName(String lastName);
 
 }

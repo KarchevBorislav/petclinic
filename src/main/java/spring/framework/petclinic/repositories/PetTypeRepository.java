@@ -5,5 +5,4 @@ import spring.framework.petclinic.model.PetType;
 
 public interface PetTypeRepository extends CrudRepository<PetType, Integer> {
 
-    PetType findByLastName(String lastName);
 }

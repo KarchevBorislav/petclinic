@@ -1,8 +1,10 @@
 package spring.framework.petclinic.bootstrap;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
+
 import spring.framework.petclinic.model.*;
 import spring.framework.petclinic.services.*;
 
@@ -18,7 +20,7 @@ public class DataInitializer implements CommandLineRunner {
     private final SpecialtyService specialtyService;
     private final VisitService visitService;
 
-
+@Autowired
     public DataInitializer(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService, VisitService visitService) {
 
         this.ownerService = ownerService;
