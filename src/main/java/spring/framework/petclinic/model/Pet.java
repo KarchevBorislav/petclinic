@@ -15,10 +15,25 @@ import java.util.Set;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+
 
 @Table(name = "pets")
 public class Pet extends BaseEntity {
+
+
+    @Builder
+    public Pet(Integer id, String name, PetType petType, Owner owner, LocalDate birthDate, Set<Visit> visits) {
+        super(id);
+        this.name = name;
+        this.petType = petType;
+        this.owner = owner;
+        this.birthDate = birthDate;
+
+        if (visits == null || !visits.isEmpty()) {
+            this.visits = visits;
+        }
+    }
+
 
     @Column(name = "name")
     private String name;
