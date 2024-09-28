@@ -12,15 +12,17 @@ import static org.junit.jupiter.api.Assertions.*;
 class PetMapServiceTest {
 
     PetMapService petMapService;
+    OwnerMapService ownerMapService;
     final int id = 1;
-    final String name = "Pet";
+
 
     @BeforeEach
     void setUp() {
+
         petMapService = new PetMapService();
         Pet pet = new Pet();
         pet.setId(id);
-        pet.setName(name);
+
 
         petMapService.save(pet);
     }
@@ -74,4 +76,6 @@ class PetMapServiceTest {
         assertNotNull(savePet.getId());
 
     }
+
+
 }
