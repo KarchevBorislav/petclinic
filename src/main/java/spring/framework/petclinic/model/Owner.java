@@ -10,15 +10,26 @@ import java.util.Set;
 @Getter
 @Entity
 @NoArgsConstructor
-@AllArgsConstructor
-@Builder
+
 
 @Table(name = "owners")
 public class Owner extends Person {
+    @Builder
+    public Owner(Integer id, String firstName, String lastName, String address, String city,
+                 String telephoneNumber, Set<Pet> pets) {
+        super(id, firstName, lastName);
+        this.address = address;
+        this.city = city;
+        this.telephoneNumber = telephoneNumber;
+
+        if (pets != null) {
+            this.pets = pets;
+        }
+    }
 
     @Column(name = "address")
     private String address;
-    @Column(name = "citie")
+    @Column(name = "city")
     private String city;
     @Column(name = "telephone_number")
     private String telephoneNumber;
