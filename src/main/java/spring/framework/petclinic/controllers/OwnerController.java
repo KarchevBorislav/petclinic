@@ -35,13 +35,13 @@ public class OwnerController {
 
         return "notimplemented";
     }
-//
-//    @GetMapping("/{ownerId}")
-//    public ModelAndView showOwner(@PathVariable("ownerId") Integer ownerId) {
-//        ModelAndView mav = new ModelAndView("owners/ownerDetails");
-//        mav.addObject(ownerService.findById(ownerId));
-//        return mav;
-//
-//    }
+
+    @GetMapping("/{ownerId}")
+    public ModelAndView showOwner(@PathVariable("ownerId") Integer ownerId) {
+        ModelAndView mav = new ModelAndView("owners/ownerDetails");
+        mav.addObject(ownerService.findById(ownerId));
+        return mav;
+
+    }
 
 }
