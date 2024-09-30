@@ -44,7 +44,7 @@ public class DataInitializer implements CommandLineRunner {
     private void loadData() {
         PetType dog = new PetType();
         dog.setPetTypeName("Dog");
-        PetType saveDod = petTypeService.save(dog);
+        PetType saveDog = petTypeService.save(dog);
 
 
         PetType cat = new PetType();
@@ -56,14 +56,12 @@ public class DataInitializer implements CommandLineRunner {
         radiology.setDescription("Radiology");
         Speciality savedRadiology = specialtyService.save(radiology);
 
-
         Speciality surgery = new Speciality();
-        radiology.setDescription("Surgery");
+        surgery.setDescription("Surgery");
         Speciality savedSurgery = specialtyService.save(surgery);
 
-
         Speciality dentistry = new Speciality();
-        radiology.setDescription("Dentistry");
+        dentistry.setDescription("dentistry");
         Speciality savedDentistry = specialtyService.save(dentistry);
 
 
@@ -76,13 +74,8 @@ public class DataInitializer implements CommandLineRunner {
         ownerOne.setTelephoneNumber("+91 123-456-789");
 
 
-
-
-
-
-
         Pet johnsPet = new Pet();
-        johnsPet.setPetType(saveDod);
+        johnsPet.setPetType(saveDog);
         johnsPet.setOwner(ownerOne);
         johnsPet.setBirthDate(LocalDate.now());
         johnsPet.setName("Pirin");
@@ -123,14 +116,18 @@ public class DataInitializer implements CommandLineRunner {
         vetOne.setFirstName("John");
         vetOne.setLastName("Doe");
         vetOne.getSpecialties().add(savedDentistry);
+
         vetService.save(vetOne);
 
         Vet vetTwo = new Vet();
 
         vetTwo.setFirstName("Eugen");
         vetTwo.setLastName("Brown");
-        vetService.save(vetTwo);
+
         vetTwo.getSpecialties().add(savedSurgery);
+        vetService.save(vetTwo);
+
+
         System.out.println("Loaded Vets...");
 
 
