@@ -10,7 +10,6 @@ import lombok.*;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 
 @Table(name = "types")
 public class PetType  extends BaseEntity {
@@ -21,5 +20,10 @@ public class PetType  extends BaseEntity {
     @Override
     public String toString() {
         return petTypeName;
+    }
+    @Builder
+    public PetType(Integer id, String petTypeName) {
+        super(id);
+        this.petTypeName = petTypeName;
     }
 }
